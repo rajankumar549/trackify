@@ -20,8 +20,8 @@ const Header = () => (
     <div id='nav-bar' className='root'>
       <AppBar position="static">
         <Toolbar>
-            <Typography variant="title" className='flex'>
-                Trackify
+            <Typography variant="display1" className='flex margin-l-10'>
+                <Link to='/'>Trackify</Link>
             </Typography>
             <div className='nav-section'>
                 <div className='nav-link'>
@@ -34,7 +34,7 @@ const Header = () => (
                     <Link to='/about'>Plans</Link>
                 </div>
                 <div className='nav-link'>
-                    <Link to='/test2'>Accounts</Link>
+                    <Link to='/auth'>Accounts</Link>
                 </div>
             </div>
         </Toolbar>

@@ -11,10 +11,13 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import '../styles/HomePage.css';
-import Countries from '../components/Global/Countries';
-import Devices from '../components/Global/Devices';
+import Countries from './Global/Countries';
+import Devices from './Global/Devices';
 import NavigationIcon from '@material-ui/icons/Navigation';
 import Button from '@material-ui/core/Button';
+import Switch from '@material-ui/core/Switch';
+import green from '@material-ui/core/colors/green';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 function TabContainer(props) {
   return (
@@ -32,37 +35,58 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
+    colorSwitchBase: {
+        color: green[300],
+        '&$colorChecked': {
+          color: green[500],
+          '& + $colorBar': {
+            backgroundColor: green[500],
+          },
+        },
+      },
+      colorBar: {},
+      colorChecked: {},
   },
 });
 
 class TrackLinkSection extends React.Component {
-  state = {
-    value: 0,
-    country:'',
-    device:''
-  };
+    constructor(){
+        super();
+        this.state = {
+            value: 0,
+            country:'',
+            device:'',
+            advancedChecked:false
+          };
+          this.handleAdvancedChanged = this.handleAdvancedChanged.bind(this);
+    }
 
   handleChange = (event, value) => {
     this.setState({ value });
   };
 
-  selectHandleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+  handleAdvancedChanged(){
+    this.setState({ advancedChecked : !this.state.advancedChecked });
+  }
+
+  handleChange = name => event => {
+    this.setState({ [name]: event.target.checked });
   };
+
   populateDevice(){
     let deviceList = require('../data/devices.json');
-    let result = deviceList.map(country => (<MenuItem key={country.id} value={country.name} > {country.name} </MenuItem>));
+    let result = deviceList.map(device => (<MenuItem key={device.id} value={device.name} > {device.name} </MenuItem>));
     return result;
     }
+
     populateCountry(){
         var countriesList = require('../data/countryList.json');
-        let result = countriesList.map(country => (<MenuItem key={country.id} value={country.name} > {country.name} </MenuItem>));
+        let result = countriesList.map(country => (<MenuItem key={country.code} value={country.name} > {country.name} </MenuItem>));
         return result;
-        }
+    }
   render() {
     const { classes } = this.props;
     const { value } = this.state;
-
     return (
       <div className='link-tab-section'>
         <Paper>
@@ -72,8 +96,8 @@ class TrackLinkSection extends React.Component {
             textColor="primary"
             onChange={this.handleChange}
             >
-                <Tab label="Tracking Link" />
-                <Tab label="HTML Tag" disabled >
+                <Tab key="Trackink-Link" label="Tracking Link" />
+                <Tab key='HTML-Tag' label="HTML Tag" disabled >
                 </Tab>
             </Tabs>
       </Paper>
@@ -88,46 +112,62 @@ class TrackLinkSection extends React.Component {
                         </div>
                     </div>
                     <div className='mdl-cell mdl-cell--12-col flex-row'>
-                        <div className='width-50-percent margin-r-10'>
-                            <FormControl key='device' className='form-control'>
-                                <Select
-                                    onChange={this.selectHandleChange}
-                                    value={this.state.device}
-                                    name="device"
-                                    displayEmpty
-                                    className='select-empty'>
-                                    <MenuItem value="" disabled>
-                                        Device
-                                    </MenuItem>
-                                    {this.populateDevice()}
-                                </Select>
-                                <FormHelperText>Device</FormHelperText>
-                            </FormControl>
+                            <div className='width-50-percent margin-r-10'>
+                                <FormControl key='device' className='form-control'>
+                                    <Select
+                                        onChange={this.selectHandleChange}
+                                        value={this.state.device}
+                                        name="device"
+                                        displayEmpty
+                                        className='select-empty'>
+                                        <MenuItem value="" disabled>
+                                            Device
+                                        </MenuItem>
+                                        {this.populateDevice()}
+                                    </Select>
+                                    <FormHelperText>Device</FormHelperText>
+                                </FormControl>
+                            </div>
+                            <div className='margin-l-10 width-50-percent'>
+                                <FormControl key='country' className='form-control'>
+                                    <Select
+                                        onChange={this.selectHandleChange}
+                                        value={this.state.country}
+                                        name="country"
+                                        displayEmpty
+                                        className='select-empty'>  
+                                        <MenuItem value="" disabled>
+                                        Country
+                                        </MenuItem>
+                                        {this.populateCountry()}
+                                    </Select>
+                                    <FormHelperText>Country</FormHelperText>
+                                </FormControl>
+                            </div>
+                      </div>
+                      <div>
+                      <FormControlLabel
+                            control={
+                                <Switch key='advancedChecked'
+                                checked={this.state.advancedChecked}
+                                onChange={this.handleAdvancedChanged}
+                                name="advancedChecked"
+                                classes={{
+                                    switchBase: classes.colorSwitchBase,
+                                    checked: classes.colorChecked,
+                                    bar: classes.colorBar,
+                                }}
+                                />
+                            }
+                            label="Custom color"
+                            />
+                      </div>
+                        <div className="wrapper mdl-cell mdl-cell--12-col">
+                            <a className="cta" href="#">
+                                <span>NEXT >></span>
+                            </a>
+                         </div>
                         </div>
-                        <div className='width-50-percent margin-l-10'>
-                            <FormControl key='country' className='form-control'>
-                                <Select
-                                    onChange={this.selectHandleChange}
-                                    value={this.state.country}
-                                    name="country"
-                                    displayEmpty
-                                    className='select-empty'>  
-                                    <MenuItem value="" disabled>
-                                    Country
-                                    </MenuItem>
-                                    {this.populateCountry()}
-                                </Select>
-                                <FormHelperText>Country</FormHelperText>
-                            </FormControl>
-                        </div>
-                        <div>
-                        <Button variant="extendedFab" aria-label="Delete" className={classes.button}>
-                            <NavigationIcon className={classes.extendedIcon} />
-                            Submit
-                        </Button>
-                        </div>
-                    </div>
-                </div>
         </TabContainer>
         </div>}
         {value === 1 && <TabContainer></TabContainer>}
