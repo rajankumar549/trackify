@@ -1,0 +1,26 @@
+
+.green-color{
+  background-color:#377893;
+}
+.root{
+  flex-grow: 1;
+}
+.flex{
+  flex-grow: 1;
+}
+.menuButton{
+  margin-left: -12;
+  margin-right: 20;
+}
+.nav-link a{
+text-decoration: none;
+    color: black;
+    margin: 0 20px;
+}
+.nav-section{
+  display: flex;
+}
+
+#nav-bar > header{
+  background-color: #377893;
+}

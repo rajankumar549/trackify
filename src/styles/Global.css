@@ -1,0 +1,28 @@
+.container{
+    width: 80%;
+    margin: 0 10%;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.width-100-percent{
+    width:100%;
+}
+.width-50-percent{
+    width: 50%;
+}
+.margin-l-10{
+    margin-left: 10px;
+}
+.margin-r-10{
+    margin-right: 10px;
+}
+.margin-lr-10{
+    margin-left: 10px;
+    margin-right: 10px;
+}
