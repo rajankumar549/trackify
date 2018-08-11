@@ -6,51 +6,47 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import $ from "jquery";
 import './../styles/Global.css';
-import './../styles/TrustedBy.css';
 import Typography from '@material-ui/core/Typography';
-import MediaCard from "./Global/MediaCard";
+import TestimonialCard from "./Global/TestimonialCard";
 import {
     BrowserView,
     MobileView,
     isBrowser,
     isMobile
   } from "react-device-detect";
-export default class TrustedBy extends Component {
-  populateClients(){
-    let clients = require('../data/clients.json');
-    let result = clients.map(client => (<div className='flex-column' key={client.id}><img src={client.src} width='200' alt='client image' className='clientCard margin-auto'/></div>));
-    return result;
-  }
+export default class TestimonialSection extends Component {
   render() {
     const settingsWeb = {
         dots: true,
         infinite: true,
-        slidesToShow: 4,
+        speed: 1000,
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: false,
-        speed: 500,
-        autoplaySpeed: 1000,
+        speed: 1000,
+        autoplaySpeed: 3000,
         cssEase: "linear"
       };
       const settingsMob= {
         dots: true,
         infinite: true,
-        speed: 500,
-        slidesToShow: 2,
+        speed: 1000,
+        slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: false,
-        autoplaySpeed: 1000,
+        speed: 1000,
+        autoplaySpeed: 3000,
         cssEase: "linear"
       };
     return (
-        <div>
+        <div className='section-margin'>
             <div className='align-center'>
             <BrowserView>
-                <p className='green-color-txt font-25'>Our Happy Clients :-)</p>
+                <p className='green-color-txt font-25'>WHAT OUR HAPPY CLIENTS SAY ABOUT AFFILITEST?</p>
                 <hr className='seprator'/>
             </BrowserView>
             <MobileView>
-                <p className='green-color-txt'>Our Happy Clients :-ß</p>
+                <p className='green-color-txt'>WHAT OUR HAPPY CLIENTS SAY ABOUT AFFILITEST?</p>
                 <hr className='seprator'/>
             </MobileView>
             </div>
@@ -63,46 +59,45 @@ export default class TrustedBy extends Component {
                 <div>
                     <BrowserView>
                         <Slider {...settingsWeb}>
-                            {this.populateClients()}
-                            {/* <div>
-                            <MediaCard name="Puneet" position="BDE" companyName="comXyz.com"/>
+                            <div>
+                            <TestimonialCard name="Puneet" position="BDE" companyName="comXyz.com"/>
                             </div>
                             <div>
-                                <MediaCard/>
+                                <TestimonialCard/>
                             </div>
                             <div>
-                            <   MediaCard name="Puneet" position="BDE" companyName="Xyx.com"/>
+                            <TestimonialCard name="Puneet" position="BDE" companyName="Xyx.com"/>
                             </div>
                             <div>
-                                <MediaCard/>
+                                <TestimonialCard/>
                             </div>
                             <div>
-                                <MediaCard/>
+                                <TestimonialCard/>
                             </div>
                             <div>
-                                <MediaCard/>
-                            </div> */}
+                                <TestimonialCard/>
+                            </div>
                         </Slider>
                     </BrowserView>
                     <MobileView>
                         <Slider {...settingsMob}>
                             <div>
-                            <MediaCard name="Puneet" position="BDE" companyName="comXyz.com"/>
+                            <TestimonialCard name="Puneet" position="BDE" companyName="comXyz.com"/>
                             </div>
                             <div>
-                                <MediaCard/>
+                                <TestimonialCard/>
                             </div>
                             <div>
-                            <   MediaCard name="Puneet" position="BDE" companyName="Xyx.com"/>
+                            <   TestimonialCard name="Puneet" position="BDE" companyName="Xyx.com"/>
                             </div>
                             <div>
-                                <MediaCard/>
+                                <TestimonialCard/>
                             </div>
                             <div>
-                                <MediaCard/>
+                                <TestimonialCard/>
                             </div>
                             <div>
-                                <MediaCard/>
+                                <TestimonialCard/>
                             </div>
                         </Slider>
                     </MobileView>

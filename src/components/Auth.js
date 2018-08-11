@@ -33,37 +33,43 @@ export default class Auth extends Component {
   }
   render() {
     return (
-      <div className="form-collection">
-        <div className="card elevation-3 limit-width log-in-card below turned">
-          <div className="card-body">
-            <div className="input-group email">
-              <input type="text" placeholder="Email"/>
-            </div>
-            <div className="input-group password">
-              <input type="password" placeholder="Password"/>
-            </div>
-            <a href="#" className="box-btn">Forgot Password?</a>
-          </div>
-          <div className="card-footer">
-            <button type="submit" className="login-btn">Log in</button>
-          </div>
+      <div id='trackify-auth'>
+        <div className='flex-column top-space'>
+          <span className='none'>By</span>
+          <img src="https://static.vnative.co/images/59faedbf12d78.png" width='300' className='margin-auto'/>
         </div>
-        <div className="card elevation-2 limit-width sign-up-card above">
-          <div className="card-body">
-            <div className="input-group fullname">
-              <input type="text" placeholder="Full Name"/>
+        <div className="form-collection">
+          <div className="card elevation-3 limit-width log-in-card below turned">
+            <div className="card-body">
+              <div className="input-group email">
+                <input type="text" placeholder="Email"/>
+              </div>
+              <div className="input-group password">
+                <input type="password" placeholder="Password"/>
+              </div>
+              <a href="#" className="box-btn">Forgot Password?</a>
             </div>
-            <div className="input-group email">
-              <input type="email" placeholder="Email"/>
-            </div>
-            <div className="input-group password">
-              <input type="password" placeholder="Password"/>
+            <div className="card-footer">
+              <button type="submit" className="login-btn">Log in</button>
             </div>
           </div>
-          <div className="card-footer">
-            <button type="submit" className="signup-btn">Sign Up</button>
+          <div className="card elevation-2 limit-width sign-up-card above">
+            <div className="card-body">
+              <div className="input-group fullname">
+                <input type="text" placeholder="Full Name"/>
+              </div>
+              <div className="input-group email">
+                <input type="email" placeholder="Email"/>
+              </div>
+              <div className="input-group password">
+                <input type="password" placeholder="Password"/>
+              </div>
+            </div>
+            <div className="card-footer">
+              <button type="submit" className="signup-btn">Sign Up</button>
+            </div>
           </div>
-        </div>
+      </div>
     </div>
     );
   }

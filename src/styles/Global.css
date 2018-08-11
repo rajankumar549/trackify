@@ -13,10 +13,12 @@ body a{
 .flex-row{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 .flex-column{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .width-100-percent{
     width:100%;
@@ -37,6 +39,461 @@ body a{
 .margin-10{
     margin: 10px;
 }
+.margin-auto{
+    margin: auto;
+}
 .align-center{
     text-align: center;
 }
+.none{
+    display: none !important;
+}
+.section-margin{
+    margin: auto;
+    margin-top: 50px;
+}
+#trackify-main .slick-prev:before, 
+#trackify-main .slick-next:before {
+    color:#4CAF7F;
+}
+/*================== Loder css==================*/
+  .overlay{
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.27); /* Black background with opacity */
+    z-index: 20; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+  .dots {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    filter: url(#goo);
+  }
+  
+  .dot {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .dot:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4CAF7F;
+    position: absolute;
+    left: 50%;
+    top: -55px;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+  @keyframes dot-0 {
+    0% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(343.6363636364deg);
+    }
+  }
+  .dot:nth-child(1) {
+    transform: rotate(0deg);
+    animation: dot-0 5s cubic-bezier(0.3, 0, 0.7, 1) infinite;
+  }
+  @keyframes dot-1 {
+    0% {
+      transform: rotate(212.7272727273deg);
+    }
+    100% {
+      transform: rotate(540deg);
+    }
+  }
+  .dot:nth-child(2) {
+    transform: rotate(32.7272727273deg);
+    animation: dot-1 5s cubic-bezier(0.3, 0, 0.7, 1) infinite;
+  }
+  @keyframes dot-2 {
+    0% {
+      transform: rotate(245.4545454545deg);
+    }
+    100% {
+      transform: rotate(736.3636363636deg);
+    }
+  }
+  .dot:nth-child(3) {
+    transform: rotate(65.4545454545deg);
+    animation: dot-2 5s cubic-bezier(0.3, 0, 0.7, 1) infinite;
+  }
+  @keyframes dot-3 {
+    0% {
+      transform: rotate(278.1818181818deg);
+    }
+    100% {
+      transform: rotate(932.7272727273deg);
+    }
+  }
+  .dot:nth-child(4) {
+    transform: rotate(98.1818181818deg);
+    animation: dot-3 5s cubic-bezier(0.3, 0, 0.7, 1) infinite;
+  }
+  @keyframes dot-4 {
+    0% {
+      transform: rotate(310.9090909091deg);
+    }
+    100% {
+      transform: rotate(1129.0909090909deg);
+    }
+  }
+  .dot:nth-child(5) {
+    transform: rotate(130.9090909091deg);
+    animation: dot-4 5s cubic-bezier(0.3, 0, 0.7, 1) infinite;
+  }
+  @keyframes dot-5 {
+    0% {
+      transform: rotate(343.6363636364deg);
+    }
+    100% {
+      transform: rotate(1325.4545454545deg);
+    }
+  }
+  .dot:nth-child(6) {
+    transform: rotate(163.6363636364deg);
+    animation: dot-5 5s cubic-bezier(0.3, 0, 0.7, 1) infinite;
+  }
+  @keyframes dot-6 {
+    0% {
+      transform: rotate(376.3636363636deg);
+    }
+    100% {
+      transform: rotate(1521.8181818182deg);
+    }
+  }
+  .dot:nth-child(7) {
+    transform: rotate(196.3636363636deg);
+    animation: dot-6 5s cubic-bezier(0.3, 0, 0.7, 1) infinite;
+  }
+  @keyframes dot-7 {
+    0% {
+      transform: rotate(409.0909090909deg);
+    }
+    100% {
+      transform: rotate(1718.1818181818deg);
+    }
+  }
+  .dot:nth-child(8) {
+    transform: rotate(229.0909090909deg);
+    animation: dot-7 5s cubic-bezier(0.3, 0, 0.7, 1) infinite;
+  }
+  @keyframes dot-8 {
+    0% {
+      transform: rotate(441.8181818182deg);
+    }
+    100% {
+      transform: rotate(1914.5454545455deg);
+    }
+  }
+  .dot:nth-child(9) {
+    transform: rotate(261.8181818182deg);
+    animation: dot-8 5s cubic-bezier(0.3, 0, 0.7, 1) infinite;
+  }
+  @keyframes dot-9 {
+    0% {
+      transform: rotate(474.5454545455deg);
+    }
+    100% {
+      transform: rotate(2110.9090909091deg);
+    }
+  }
+  .dot:nth-child(10) {
+    transform: rotate(294.5454545455deg);
+    animation: dot-9 5s cubic-bezier(0.3, 0, 0.7, 1) infinite;
+  }
+  @keyframes dot-10 {
+    0% {
+      transform: rotate(507.2727272727deg);
+    }
+    100% {
+      transform: rotate(2307.2727272727deg);
+    }
+  }
+  .dot:nth-child(11) {
+    transform: rotate(327.2727272727deg);
+    animation: dot-10 5s cubic-bezier(0.3, 0, 0.7, 1) infinite;
+  }
+  .green-color-txt{
+      color: #4CAF7F;
+  }
+  .font-25{
+      font-size: 25px;
+  }
+
+  /*================== Error 404 Page ==============*/
+  @import url(https://fonts.googleapis.com/css?family=opensans:500);
+#trackify-404{
+    color:#002e5b;
+    font-family: 'Open Sans', sans-serif;
+    max-height:700px;
+    overflow: hidden;
+}
+.c{
+    text-align: center;
+    display: block;
+    position: relative;
+    width:80%;
+    margin:100px auto;
+}
+._404{
+    font-size: 220px;
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+    height: 150px;
+    letter-spacing: 15px;
+}
+._1{
+    text-align:center;
+    display:block;
+    position:relative;
+    letter-spacing: 12px;
+    font-size: 3em;
+    margin-bottom: 15px;
+    line-height: 80%;
+}
+._2{
+    text-align:center;
+    display:block;
+    position: relative;
+    font-size: 20px;
+}
+.text{
+    font-size: 70px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 19px 0px 0px 0px;
+    /* top: 256.301px; */
+    z-index: 3;
+    width: 100%;
+    line-height: 1.2em;
+    display: inline-block;
+}
+
+
+.btn{
+    background-color: #4CAF7F;
+    position: relative;
+    display: inline-block;
+    width: unset;
+    padding: 10px;
+    z-index: 5;
+    font-size: 15px;
+    margin: 10px auto;
+    color: #002e5b;
+    text-decoration: none;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+.right{
+    float:right;
+    width:60%;
+}
+
+hr{
+    padding: 0;
+    border: none;
+    border-top: 5px solid #4CAF7F;
+    color: #4CAF7F;
+    text-align: center;
+    margin: 0px auto;
+    width: 420px;
+    height:10px;
+    z-index: -10;
+}
+
+hr:after {
+    content: "\2022";
+    display: inline-block;
+    position: relative;
+    top: -0.75em;
+    font-size: 2em;
+    padding: 0 0.2em;
+    background: #33cc99;
+}
+
+.cloud {
+    width: 350px; height: 120px;
+
+    background: #002e5b;
+    background: linear-gradient(top, #002e5b 100%);
+    background: -webkit-linear-gradient(top, #002e5b 100%);
+    background: -moz-linear-gradient(top, #002e5b 100%);
+    background: -ms-linear-gradient(top, #002e5b 100%);
+    background: -o-linear-gradient(top, #002e5b 100%);
+
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+
+    position: absolute;
+    margin: 120px auto 20px;
+    z-index:-1;
+    transition: ease 1s;
+}
+
+.cloud:after, .cloud:before {
+    content: '';
+    position: absolute;
+    background: #002e5b;
+    z-index: -1
+}
+
+.cloud:after {
+    width: 100px; height: 100px;
+    top: -50px; left: 50px;
+
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+}
+
+.cloud:before {
+    width: 180px; height: 180px;
+    top: -90px; right: 50px;
+
+    border-radius: 200px;
+    -webkit-border-radius: 200px;
+    -moz-border-radius: 200px;
+}
+
+.x1 {
+    top:-50px;
+    left:100px;
+    -webkit-transform: scale(0.3);
+    -moz-transform: scale(0.3);
+    transform: scale(0.3);
+    opacity: 0.9;
+    -webkit-animation: moveclouds 15s linear infinite;
+    -moz-animation: moveclouds 15s linear infinite;
+    -o-animation: moveclouds 15s linear infinite;
+}
+
+.x1_5{
+    top:-80px;
+    left:250px;
+    -webkit-transform: scale(0.3);
+    -moz-transform: scale(0.3);
+    transform: scale(0.3);
+    -webkit-animation: moveclouds 17s linear infinite;
+    -moz-animation: moveclouds 17s linear infinite;
+    -o-animation: moveclouds 17s linear infinite; 
+}
+
+.x2 {
+    left: 250px;
+    top:30px;
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 0.6; 
+    -webkit-animation: moveclouds 25s linear infinite;
+    -moz-animation: moveclouds 25s linear infinite;
+    -o-animation: moveclouds 25s linear infinite;
+}
+
+.x3 {
+    left: 250px; bottom: -70px;
+
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 0.8; 
+
+    -webkit-animation: moveclouds 25s linear infinite;
+    -moz-animation: moveclouds 25s linear infinite;
+    -o-animation: moveclouds 25s linear infinite;
+}
+
+.x4 {
+    left: 470px; botttom: 20px;
+
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+    opacity: 0.75;
+
+    -webkit-animation: moveclouds 18s linear infinite;
+    -moz-animation: moveclouds 18s linear infinite;
+    -o-animation: moveclouds 18s linear infinite;
+}
+
+.x5 {
+    left: 200px; top: 300px;
+
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    transform: scale(0.5);
+    opacity: 0.8; 
+
+    -webkit-animation: moveclouds 20s linear infinite;
+    -moz-animation: moveclouds 20s linear infinite;
+    -o-animation: moveclouds 20s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+    0% {margin-left: 1000px;}
+    100% {margin-left: -1000px;}
+}
+@-moz-keyframes moveclouds {
+    0% {margin-left: 1000px;}
+    100% {margin-left: -1000px;}
+}
+@-o-keyframes moveclouds {
+    0% {margin-left: 1000px;}
+    100% {margin-left: -1000px;}
+}
+@media screen and (max-width: 480px) {
+    #trackify-404 hr{
+        width:unset;
+    }
+    #trackify-404 ._404 {
+        font-size: 100px;
+        height: 100px;
+    }
+    #trackify-404 ._1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    #trackify-404 ._2{
+        font-size: 15px;
+    }
+    #trackify-404 .btn{
+        width: unset;
+        font-size: 15px;
+    }
+    #trackify-main .seprator{
+        width: unset;
+    }
+  }
+  .seprator{
+    padding: 0;
+    border: none;
+    border-top: 2px solid #002e5b;
+    color: #002e5b;
+    text-align: center;
+    margin: 0px auto;
+    width: 420px;
+    height: 10px;
+    z-index: -10;
+  }

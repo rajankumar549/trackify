@@ -28,7 +28,7 @@ body.auth {
 	width: 350px;
     height: 350px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .limit-width {
@@ -125,7 +125,7 @@ body.auth {
 	font-size: 1.5rem;
 	text-transform: uppercase;
 	font-weight: 600;
-	background: #4CAF50;
+	background: #002e5b;
 	border: none;
 	color: #fff;
 	box-shadow: none;
@@ -268,4 +268,7 @@ body.auth {
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 	opacity: 0.7;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+}
+.top-space{
+    margin-top: 50px;
 }

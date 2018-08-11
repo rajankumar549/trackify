@@ -14,7 +14,8 @@ import Avtar from "./../../data/img_avatar.png";
 const styles = theme => ({
   card: {
     display: 'flex',
-    margin:'0 10 0 10'
+    margin:'0 10 0 10',
+    boxShadow:'unset !important'
   },
   details: {
     display: 'flex',
@@ -51,22 +52,11 @@ function MediaCard(props) {
             <Typography variant="subheading" color="textSecondary" >
                 {props.position}
                 <br/>
-                   <span className='margin-l-10'> at</span>
+                   <span className=''> at</span>
                 <br/>
                 {props.companyName}
             </Typography>
           </CardContent>
-          {/* <div className={classes.controls}>
-            <IconButton aria-label="Previous">
-              {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
-            </IconButton>
-            <IconButton aria-label="Play/pause">
-              <PlayArrowIcon className={classes.playIcon} />
-            </IconButton>
-            <IconButton aria-label="Next">
-              {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
-            </IconButton>
-          </div> */}
         </div>
         <CardMedia
           className={classes.cover}

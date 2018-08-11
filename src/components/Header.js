@@ -17,29 +17,21 @@ import { Route, Redirect } from 'react-router'
 // The Header creates links that can be used to navigate
 // between routes.
 const Header = () => (
-    <div id='nav-bar' className='root'>
-      <AppBar position="static">
-        <Toolbar>
-            <Typography variant="display1" className='flex margin-l-10'>
-                <Link to='/'>Trackify</Link>
-            </Typography>
-            <div className='nav-section'>
-                <div className='nav-link'>
-                    <Link to='/'>Home</Link>
-                </div>
-                <div className='nav-link'>
-                    <Link to='/about'>About</Link>
-                </div>
-                <div className='nav-link'>
-                    <Link to='/about'>Plans</Link>
-                </div>
-                <div className='nav-link'>
-                    <Link to='/auth'>Accounts</Link>
-                </div>
-            </div>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <header id='trackify'>
+        <section>
+        <a href="https://www.linkedin.com/in/sutharmayur" id="logo" target="_blank">trackify</a>
+        <label htmlFor="toggle-1" className="toggle-menu"><ul><li></li> <li></li> <li></li></ul></label>
+        <input type="checkbox" id="toggle-1"/>
+        <nav>
+        <ul>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/'>Plans</Link></li>
+        <li><Link to='/auth'>Accounts</Link></li>
+        <li><Link to='/about'>About</Link></li>
+        </ul>
+        </nav>
+        </section>
+    </header>
 )
 
 export default Header
